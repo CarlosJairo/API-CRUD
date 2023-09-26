@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database - users</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="assets/icon.png" type="image/x-icon" />
+    <meta name="description"
+        content="Este proyecto demuestra mis habilidades en el desarrollo web y la gestión de API's al implementar un sistema completo de CRUD para administrar usuarios. Además, incluye una característica especial de validación en tiempo real de campos.">
+    <link rel="canonical" href="https://CarlosJairo.github.io/API-CRUD">
+    <link rel="apple-touch-icon" href="https://CarlosJairo.github.io/API-CRUD/assets/images/logo.png">
+    <meta name="theme-color" content="#0c887e">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:type" content="website">
+    <meta property="og:title" name="twitter:title" content="E-Commerce Select">
+    <meta property="og:description" name="twitter:description"
+        content="Este proyecto demuestra mis habilidades en el desarrollo web y la gestión de API's al implementar un sistema completo de CRUD para administrar usuarios. Además, incluye una característica especial de validación en tiempo real de campos.">
+    <meta property="og:image" name="twitter:image"
+        content="https://CarlosJairo.github.io/API-CRUD/assets/images/logo.png">
+    <meta property="og:url" name="twitter:url" content="https://CarlosJairo.github.io/API-CRUD/assets/images/logo.png">
+
+<body>
+    <h1>Database - users</h1>
+    <form class="form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" title="The name only accepts letters and blank spaces"
+            pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" title="Wrong email"
+            pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9\-]+(\.[a-z0-9\-]+)*(\.[a-z]{2,15})$" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" pattern="\d{1,2}|100" title="Please enter a valid age" required>
+
+        <input type="reset" value="Clean form" class="clean-btn btn">
+        <input type="submit" value="Add user" class="btn" id="submit-btn">
+        <input type="hidden" name="hidden" id="" />
+    </form>
+
+    <h2>User Table</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="users-table">
+                <tr>
+                    <td colspan="4" class="loader-ctn"><img class="loader" src="assets/three-dots.svg" alt="Loading...">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <section class="confirmation-box ">
+        <h2>Are you sure you want to delete this record?</h2>
+        <form>
+            <button type="button" class="remove-btn btn" data-id="">Yes, Delete</button>
+            <button type="button" class="cancel-btn btn">Cancel</button>
+        </form>
+    </section>
+    <script src="js/scritp.js" type="module"></script>
+</body>
+
+</html>
